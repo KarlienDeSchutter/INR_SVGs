@@ -1,0 +1,50 @@
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true });</script>
+<div class="mermaid">
+graph TD
+    PBI_Acc__3_1["Report: Accessories Turnover and Profit Planning&lt;br>Page: Step 3.1 FY New Car Sales Plan"]
+    PBI_Acc__3_2["Report: Accessories Turnover and Profit Planning&lt;br>Page: Step 3.2 FY Accessory Turnover/NCS"]
+    PBI_Acc__3_3["Report: Accessories Turnover and Profit Planning&lt;br>Page: Step 3.3 Forecast CCM / NCS"]
+    PBI_Acc__3_4["Report: Accessories Turnover and Profit Planning&lt;br>Page: Step 3.4 Forecast CCM"]
+
+    PowerApp_Acc__3_1["PowerApps: &lt;a href='https://make.powerapps.com/environments/Default-52b742d1-3dc2-47ac-bf03-609c83d9df9f/search?q=VCOAP CCM' target='_blank'>VCOAP CCM&lt;/a>&lt;br>VCOAP CCM Planning (SharePoint) NCS Plan&lt;br>&lt;i>Fiscal year planning&lt;/i>"]
+    PowerApp_Acc__3_2["PowerApps: &lt;a href='https://make.powerapps.com/environments/Default-52b742d1-3dc2-47ac-bf03-609c83d9df9f/search?q=VCOAP CCM' target='_blank'>VCOAP CCM&lt;/a>&lt;br>VCOAP CCM Planning (SharePoint) NCS"]
+    PowerApp_Acc__3_3["PowerApps: &lt;a href='https://make.powerapps.com/environments/Default-52b742d1-3dc2-47ac-bf03-609c83d9df9f/search?q=VCOAP CCM' target='_blank'>VCOAP CCM&lt;/a>&lt;br>VCOAP CCM Planning (SharePoint)"]
+    PowerApp_Acc__3_4["PowerApps: &lt;a href='https://make.powerapps.com/environments/Default-52b742d1-3dc2-47ac-bf03-609c83d9df9f/search?q=VCOAP CCM' target='_blank'>VCOAP CCM&lt;/a>&lt;br>VCOAP CCM Planning (SharePoint) TME"]
+
+    SharepointList_Acc__3_1["Sharepoint Site: &lt;a href='https://toyotaeu.sharepoint.com/sites/AfterSalesCollaborativePlatform/AfterSalesSolutionManagement' target='_blank'>AfterSalesSolutionManagement&lt;/a>&lt;br>List: CCM_Planning"]
+
+    PBI_Acc__3_1 --> |"PBI Selected NMSC Group&lt;br>PBI Selected Brand"| PowerApp_Acc__3_1
+    PBI_Acc__3_2 --> |"PBI Selected NMSC Group&lt;br>PBI Selected Brand"| PowerApp_Acc__3_2
+    PBI_Acc__3_3 --> |"PBI Selected NMSC Group&lt;br>PBI Selected Brand&lt;br>PBI Selected Category &lt;i>{NMSC,TME}&lt;/i>"| PowerApp_Acc__3_3
+    PBI_Acc__3_4 --> |"PBI Selected NMSC Group&lt;br>PBI Selected Brand&lt;br>TO DELETE from visual input: &lt;strike>PBI Selected planning&lt;i>&lt;br>{Lexus NMSC CCM/NCS, Lexus TME CM (%),&lt;br>Toyota NMSC CCM/NCS, Toyota TME CM (%)}&lt;/i>"| PowerApp_Acc__3_4
+
+    PowerApp_Acc__3_1 --> input6("PBI Selected NMSC Group&lt;br>PBI Selected Brand&lt;br>Sharepoint List TME = 'NMSC'&lt;br>&lt;br>&lt;b>PowerApp Input: NCS_Plan3, NCS_Plan4&lt;/b> ") --> SharepointList_Acc__3_1
+    PowerApp_Acc__3_2 --> input7("PBI Selected NMSC Group&lt;br>PBI Selected Brand&lt;br>Sharepoint List TME = 'NMSC'&lt;br>&lt;br>&lt;b>PowerApp Input: NCS1, NCS2, NCS3 and NCS4&lt;/b>") --> SharepointList_Acc__3_1
+    PowerApp_Acc__3_3 --> input8("PBI Selected NMSC Group&lt;br>PBI Selected Brand&lt;br>Sharepoint List TME = 'NMSC'&lt;br>&lt;br>&lt;b>PowerApp Input: FY_N, FY_N1, FY_N2 and FY_N3&lt;/b>") --> SharepointList_Acc__3_1
+    PowerApp_Acc__3_4 --> input9("PBI Selected NMSC Group&lt;br>PBI Selected Brand&lt;br>Sharepoint List TME = 'NMSC'&lt;br>&lt;br>&lt;b>PowerApp Input: FY_Forecast1, FY_Forecast2,&lt;br>FY_Forecast3 and FY_Forecast4&lt;/b>") --> SharepointList_Acc__3_1
+
+    click PBI_Acc__3_1 "https://app.powerbi.com/groups/d35e6402-b4f4-4d44-b2dc-60c4c7a9527d/reports/15b942af-3802-4b18-8df5-26f86d673587/ReportSection403db41ffa157280588f" "Accessories Turnover and Profit Planning > Step 3.1 FY New Car Sales Plan"
+    click PBI_Acc__3_2 "https://app.powerbi.com/groups/d35e6402-b4f4-4d44-b2dc-60c4c7a9527d/reports/15b942af-3802-4b18-8df5-26f86d673587/ReportSectionecf42d2c680674d5d5e7" "Accessories Turnover and Profit Planning > Step 3.2 FY Accessory Turnover/NCS"
+    click PBI_Acc__3_3 "https://app.powerbi.com/groups/d35e6402-b4f4-4d44-b2dc-60c4c7a9527d/reports/15b942af-3802-4b18-8df5-26f86d673587/ReportSectionf3fa096a9025fe53f66d" "Accessories Turnover and Profit Planning > Step 3.3 Forecast CCM / NCS"
+    click PBI_Acc__3_4 "https://app.powerbi.com/groups/d35e6402-b4f4-4d44-b2dc-60c4c7a9527d/reports/15b942af-3802-4b18-8df5-26f86d673587/ReportSectionc6122d5d4864803d090e" "Accessories Turnover and Profit Planning > Step 3.4 Forecast CCM"
+
+    click PowerApp_Acc__3_1 "https://make.powerapps.com/environments/Default-52b742d1-3dc2-47ac-bf03-609c83d9df9f/apps/cae7b059-c876-4485-8f01-0cb04bbf16e8/details" "VCOAP CCM Planning (SharePoint) NCS Plan"
+    click PowerApp_Acc__3_2 "https://make.powerapps.com/environments/Default-52b742d1-3dc2-47ac-bf03-609c83d9df9f/apps/1e82d7a1-4df5-4448-90de-2db8d0e7b2c0/details" "VCOAP CCM Planning (SharePoint) NCS"
+    click PowerApp_Acc__3_3 "https://make.powerapps.com/environments/Default-52b742d1-3dc2-47ac-bf03-609c83d9df9f/apps/6d718fe7-1f6f-4f28-83b8-3b86425eae71/details" "VCOAP CCM Planning (SharePoint)"
+    click PowerApp_Acc__3_4 "https://make.powerapps.com/environments/Default-52b742d1-3dc2-47ac-bf03-609c83d9df9f/apps/2de213eb-1128-48ea-b5b6-f75c83fdb93d/details" "VCOAP CCM Planning (SharePoint) TME"
+
+    click SharepointList_Acc__3_1 "https://toyotaeu.sharepoint.com/sites/AfterSalesCollaborativePlatform/AfterSalesSolutionManagement/Lists/CCM_Planning" "Sharepoint List: AfterSalesSolutionManagement > CCM_Planning"
+
+    style PBI_Acc__3_1 fill:#FAD058
+    style PBI_Acc__3_2 fill:#FAD058
+    style PBI_Acc__3_3 fill:#FAD058
+    style PBI_Acc__3_4 fill:#FAD058
+
+    style PowerApp_Acc__3_1 fill:#F08EC7
+    style PowerApp_Acc__3_2 fill:#F08EC7
+    style PowerApp_Acc__3_3 fill:#F08EC7
+    style PowerApp_Acc__3_4 fill:#F08EC7
+
+    style SharepointList_Acc__3_1 fill:#54B8AF
+</div>
