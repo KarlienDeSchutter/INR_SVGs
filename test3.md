@@ -1,4 +1,5 @@
-```graph TD
+```mermaid
+graph TD
     PBI_Acc__3_1["Report: Accessories Turnover and Profit Planning<br>Page: Step 3.1 FY New Car Sales Plan"]
     PBI_Acc__3_2["Report: Accessories Turnover and Profit Planning<br>Page: Step 3.2 FY Accessory Turnover/NCS"]
     PBI_Acc__3_3["Report: Accessories Turnover and Profit Planning<br>Page: Step 3.3 Forecast CCM / NCS"]
