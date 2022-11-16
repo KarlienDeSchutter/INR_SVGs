@@ -44,4 +44,5 @@ graph TD
     style PowerApp_Acc__3_3 fill:#F08EC7
     style PowerApp_Acc__3_4 fill:#F08EC7
 
-    style SharepointList_Acc__3_1 fill:#54B8AF```
+    style SharepointList_Acc__3_1 fill:#54B8AF;
+```
