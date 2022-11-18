@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 </head>
 <body>
-<!--script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script-->
-
-<div class="mermaid">
+<script type="module">
+    import mermaid from 'https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+</script>
+<pre class="mermaid">
+    <xmp>
 graph TD
     PBI_Acc__3_1["Report: Accessories Turnover and Profit Planning<br>Page: Step 3.1 FY New Car Sales Plan"]
     PBI_Acc__3_2["Report: Accessories Turnover and Profit Planning<br>Page: Step 3.2 FY Accessory Turnover/NCS"]
@@ -53,7 +55,7 @@ graph TD
     style PowerApp_Acc__3_4 fill:#F08EC7
 
     style SharepointList_Acc__3_1 fill:#54B8AF
-    </div>
-    <script>mermaid.initialize({ startOnLoad: true });</script>
+</xmp>
+    </pre>
 </body>
 </html>
