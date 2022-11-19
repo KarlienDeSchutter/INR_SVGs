@@ -3,32 +3,7 @@
 <head>
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<div class="mermaid">
+<div>
 </div>
-<script>
-    let current_url = window.location.href;
-    let list_current_url = current_url.split("/");
-    let current_folder = list_current_url.slice(0,list_current_url.length-1).join("/");
-    let md_file = list_current_url[list_current_url.length-1].replace(".html","") + ".md";
-    let source_md_url = current_folder +"/"+md_file;
-
-    //alert(source_md_url);
-    const req = new XMLHttpRequest();
-    //req.open("GET", "https://karliendeschutter.github.io/INR_SVGs/test3.md",false);
-    //req.open("GET", "../index.md",false);
-    req.open("GET", source_md_url,false);
-    req.send();
-    let graph_value = req.responseText;
-    //alert(req.responseText);
-    graph_value = graph_value.replace("```mermaid","")
-        .replace("```","")
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&apos;');
-    document.querySelector('.mermaid').innerHTML = graph_value;
-</script>
 </body>
 </html>
