@@ -16,9 +16,10 @@
     alert(source_md_url);
     const req = new XMLHttpRequest();
     //req.open("GET", "https://karliendeschutter.github.io/INR_SVGs/test3.md",false);
-    req.open("GET", "index.md");
+    req.open("GET", "./index.md");
     req.send();
     let graph_value = req.responseText;
+    alert(req.responseText);
     graph_value = graph_value.replace("```mermaid","")
         .replace("```","")
         .replace(/&/g, '&amp;')
