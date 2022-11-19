@@ -13,13 +13,14 @@
     let md_file = list_current_url[list_current_url.length-1].replace(".html","") + ".md";
     let source_md_url = current_folder +"/"+md_file;
 
-    alert(source_md_url);
+    //alert(source_md_url);
     const req = new XMLHttpRequest();
     //req.open("GET", "https://karliendeschutter.github.io/INR_SVGs/test3.md",false);
-    req.open("GET", "./index.md");
+    //req.open("GET", "../index.md",false);
+    req.open("GET", source_md_url,false);
     req.send();
     let graph_value = req.responseText;
-    alert(req.responseText);
+    //alert(req.responseText);
     graph_value = graph_value.replace("```mermaid","")
         .replace("```","")
         .replace(/&/g, '&amp;')
