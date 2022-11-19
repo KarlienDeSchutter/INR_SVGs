@@ -7,7 +7,7 @@
 <div class="mermaid">
 </div>
 <script>
-    document.querySelector('.mermaid').value = `graph TD
+    let graph_value = `graph TD
     PBI_Acc__3_1["Report: Accessories Turnover and Profit Planning<br>Page: Step 3.1 FY New Car Sales Plan"]
     PBI_Acc__3_2["Report: Accessories Turnover and Profit Planning<br>Page: Step 3.2 FY Accessory Turnover/NCS"]
     PBI_Acc__3_3["Report: Accessories Turnover and Profit Planning<br>Page: Step 3.3 Forecast CCM / NCS"]
@@ -52,11 +52,12 @@
     style PowerApp_Acc__3_3 fill:#F08EC7
     style PowerApp_Acc__3_4 fill:#F08EC7
 
-    style SharepointList_Acc__3_1 fill:#54B8AF;`.replace(/&/g, '&amp;')
+    style SharepointList_Acc__3_1 fill:#54B8AF;`.replace('&', '&amp;')
                .replace('<', '&lt;')
                .replace('>', '&gt;')
                .replace('"', '&quot;')
                .replace("'", '&apos;');
+    document.querySelector('.mermaid').value = graph_value;
     //mermaid.initialize();
 </script>
 </body>
