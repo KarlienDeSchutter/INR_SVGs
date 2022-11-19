@@ -15,12 +15,12 @@
 
     //alert(source_md_url);
     const req = new XMLHttpRequest();
-    //req.open("GET", "https://karliendeschutter.github.io/INR_SVGs/test3.md",false);
+    //req.open("GET", "https://karliendeschutter.github.io/INR_SVGs/TME/Aftersales/VCOAP/powerapp_ccm_input.md",false);
     //req.open("GET", "../index.md",false);
     req.open("GET", source_md_url,false);
     req.send();
     let graph_value = req.responseText;
-    //alert(req.responseText);
+    // alert(req.responseText);
     graph_value = graph_value.replace("```mermaid","")
         .replace("```","")
         .replace(/&/g, '&amp;')
