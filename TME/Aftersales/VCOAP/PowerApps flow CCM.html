@@ -4,6 +4,9 @@
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({startOnLoad:false});
+</script>
 	<div class="mermaid">
 	</div>
 	<div id=mermaid_code> <xmp>graph TD
@@ -22,7 +25,7 @@
     PBI_Acc__3_1 --> |"PBI Selected NMSC Group<br>PBI Selected Brand"| PowerApp_Acc__3_1
     PBI_Acc__3_2 --> |"PBI Selected NMSC Group<br>PBI Selected Brand"| PowerApp_Acc__3_2
     PBI_Acc__3_3 --> |"PBI Selected NMSC Group<br>PBI Selected Brand<br>PBI Selected Category <i>{NMSC,TME}</i>"| PowerApp_Acc__3_3
-    PBI_Acc__3_4 --> |"PBI Selected NMSC Group<br>PBI Selected Brand<br>TO DELETE from visual input: <strike>PBI Selected planning<i><br>{Lexus NMSC CCM/NCS, Lexus TME CM (%),<br>Toyota NMSC CCM/NCS, Toyota TME CM (%)}</i>"| PowerApp_Acc__3_4
+    PBI_Acc__3_4 --> |"PBI Selected NMSC Group<br>PBI Selected Brand<br>TO DELETE from visual input: <strike>PBI Selected planning<i><br>{Lexus NMSC CCM/NCS, Lexus TME CM (%),<br>Toyota NMSC CCM/NCS, Toyota TME CM (%)}</i></strike>"| PowerApp_Acc__3_4
 
     PowerApp_Acc__3_1 --> input6("PBI Selected NMSC Group<br>PBI Selected Brand<br>Sharepoint List TME = 'NMSC'<br><br><b>PowerApp Input: NCS_Plan3, NCS_Plan4</b> ") --> SharepointList_Acc__3_1
     PowerApp_Acc__3_2 --> input7("PBI Selected NMSC Group<br>PBI Selected Brand<br>Sharepoint List TME = 'NMSC'<br><br><b>PowerApp Input: NCS1, NCS2, NCS3 and NCS4</b>") --> SharepointList_Acc__3_1
@@ -56,10 +59,13 @@
 </div>
 
 <script>
+    // function renderMermaid(){
+    //     mermaid.init(undefined,document.querySelectorAll(".testDiagram"));
+    // }
     let graph_value = document.getElementById('mermaid_code').innerHTML;
     
 	document.getElementById("mermaid_code").style.visibility = "hidden";
-    graph_value = graph_value.replace("```mermaid","")
+    const code = graph_value.replace("```mermaid","")
         .replace("```","")
 		.replace("<xmp>","")
 		.replace("</xmp>","")
@@ -68,8 +74,15 @@
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&apos;');
-	//alert(graph_value);
-    document.querySelector('.mermaid').innerHTML = graph_value;
+	//alert(code);
+    let insert = function(code){
+        document.querySelector('.mermaid').innerHTML = code;
+    }
+    // insert(code)
+    // alert(document.querySelector('.mermaid').innerHTML);
+    mermaid.init("preparedScheme", document.querySelector('.mermaid'), insert(code));
+    alert(document.querySelector('.mermaid').innerHTML);
+    
 </script>
 </body>
 </html>
